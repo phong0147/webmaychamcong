@@ -23,6 +23,6 @@ class HomeController extends Controller
         return view('layouts.index',compact('parents_menu','employs_menu','word_menu','salary_menu','setting_qlcc','setting_qltl','setting_qlnv'));
     }
    
-
+   
 
 }

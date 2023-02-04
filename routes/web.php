@@ -18,3 +18,6 @@ Route::get('/home','HomeController@test');
 Route::get('/list_user','UsersController@list_user');
 Route::get('/user_id','UsersController@user_id');
 Route::get('/old','HomeController@index');
+Route::get('/login','UsersController@login');
+Route::post('/action_login','UsersController@action_login')->name('login');
+Route::get('/logout','UsersController@logout')->name('logout');

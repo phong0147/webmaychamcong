@@ -8,6 +8,7 @@ use App\Models\erp_menu;
 use Illuminate\Support\Facades\View;
 class AppServiceProvider extends ServiceProvider
 {
+   
     /**
      * Register any application services.
      *

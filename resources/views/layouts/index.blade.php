@@ -9,7 +9,7 @@
     <meta name="author" content="pixelstrap">
     <link rel="icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
     <link rel="shortcut icon" href="{{asset('assets/images/favicon.png')}}" type="image/x-icon">
-    <title>Creative - Premium Admin Template</title>
+    <title>HARD</title>
     <!-- Google font-->
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -25,6 +25,9 @@
     <!-- Feather icon-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/feather-icon.css')}}">
     <!-- Plugins css start-->
+     <!-- Plugins css start-->
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/tree.css')}}">
+    <!-- Plugins css Ends-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/animate.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/chartist.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/prism.css')}}">
@@ -77,563 +80,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 
-table {
-  caption-side: bottom;
-  border-collapse: collapse;
-}
-
-
-
-th {
-  text-align: inherit;
-  text-align: -webkit-match-parent;
-}
-
-thead,
-tbody,
-tfoot,
-tr,
-td,
-th {
-  border-color: inherit;
-  border-style: solid;
-  border-width: 0;
-}
-
-label {
-  display: inline-block;
-}
-
-button {
-  border-radius: 0;
-}
-
-button:focus:not(:focus-visible) {
-  outline: 0;
-}
-
-input,
-button,
-select,
-optgroup,
-textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-button,
-select {
-  text-transform: none;
-}
-
-[role=button] {
-  cursor: pointer;
-}
-
-select {
-  word-wrap: normal;
-}
-select:disabled {
-  opacity: 1;
-}
-
-[list]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-button,
-[type=button],
-[type=reset],
-[type=submit] {
-  -webkit-appearance: button;
-}
-button:not(:disabled),
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled) {
-  cursor: pointer;
-}
-
-::-moz-focus-inner {
-  padding: 0;
-  border-style: none;
-}
-
-textarea {
-  resize: vertical;
-}
-
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-legend {
-  float: left;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 0.5rem;
-  font-size: calc(1.275rem + 0.3vw);
-  line-height: inherit;
-}
-@media (min-width: 1200px) {
-  legend {
-    font-size: 1.5rem;
-  }
-}
-legend + * {
-  clear: left;
-}
-
-::-webkit-datetime-edit-fields-wrapper,
-::-webkit-datetime-edit-text,
-::-webkit-datetime-edit-minute,
-::-webkit-datetime-edit-hour-field,
-::-webkit-datetime-edit-day-field,
-::-webkit-datetime-edit-month-field,
-::-webkit-datetime-edit-year-field {
-  padding: 0;
-}
-
-::-webkit-inner-spin-button {
-  height: auto;
-}
-
-[type=search] {
-  outline-offset: -2px;
-  -webkit-appearance: textfield;
-}
-
-.table, .dataTable-table {
-  --bs-table-bg: transparent;
-  --bs-table-accent-bg: transparent;
-  --bs-table-striped-color: #212529;
-  --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
-  --bs-table-active-color: #212529;
-  --bs-table-active-bg: rgba(0, 0, 0, 0.1);
-  --bs-table-hover-color: #212529;
-  --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
-  width: 100%;
-  margin-bottom: 1rem;
-  color: #212529;
-  vertical-align: top;
-  border-color: #dee2e6;
-}
-.table > :not(caption) > * > *, .dataTable-table > :not(caption) > * > * {
-  padding: 0.5rem 0.5rem;
-  background-color: var(--bs-table-bg);
-  border-bottom-width: 1px;
-  box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
-}
-.table > tbody, .dataTable-table > tbody {
-  vertical-align: inherit;
-}
-.table > thead, .dataTable-table > thead {
-  vertical-align: bottom;
-}
-.table > :not(:first-child), .dataTable-table > :not(:first-child) {
-  border-top: 2px solid currentColor;
-}
-
-.caption-top {
-  caption-side: top;
-}
-
-.table-sm > :not(caption) > * > * {
-  padding: 0.25rem 0.25rem;
-}
-
-.table-bordered > :not(caption) > *, .dataTable-table > :not(caption) > * {
-  border-width: 1px 0;
-}
-.table-bordered > :not(caption) > * > *, .dataTable-table > :not(caption) > * > * {
-  border-width: 0 1px;
-}
-
-.table-borderless > :not(caption) > * > * {
-  border-bottom-width: 0;
-}
-.table-borderless > :not(:first-child) {
-  border-top-width: 0;
-}
-
-.table-striped > tbody > tr:nth-of-type(odd) > * {
-  --bs-table-accent-bg: var(--bs-table-striped-bg);
-  color: var(--bs-table-striped-color);
-}
-
-.table-active {
-  --bs-table-accent-bg: var(--bs-table-active-bg);
-  color: var(--bs-table-active-color);
-}
-
-.table-hover > tbody > tr:hover > *, .dataTable-table > tbody > tr:hover > * {
-  --bs-table-accent-bg: var(--bs-table-hover-bg);
-  color: var(--bs-table-hover-color);
-}
-
-.table-primary {
-  --bs-table-bg: #cfe2ff;
-  --bs-table-striped-bg: #c5d7f2;
-  --bs-table-striped-color: #000;
-  --bs-table-active-bg: #bacbe6;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #bfd1ec;
-  --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #bacbe6;
-}
-
-.table-secondary {
-  --bs-table-bg: #e2e3e5;
-  --bs-table-striped-bg: #d7d8da;
-  --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cbccce;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d1d2d4;
-  --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #cbccce;
-}
-
-.table-success {
-  --bs-table-bg: #d1e7dd;
-  --bs-table-striped-bg: #c7dbd2;
-  --bs-table-striped-color: #000;
-  --bs-table-active-bg: #bcd0c7;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #c1d6cc;
-  --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #bcd0c7;
-}
-
-.table-info {
-  --bs-table-bg: #cff4fc;
-  --bs-table-striped-bg: #c5e8ef;
-  --bs-table-striped-color: #000;
-  --bs-table-active-bg: #badce3;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #bfe2e9;
-  --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #badce3;
-}
-
-.table-warning {
-  --bs-table-bg: #fff3cd;
-  --bs-table-striped-bg: #f2e7c3;
-  --bs-table-striped-color: #000;
-  --bs-table-active-bg: #e6dbb9;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #ece1be;
-  --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #e6dbb9;
-}
-
-.table-danger {
-  --bs-table-bg: #f8d7da;
-  --bs-table-striped-bg: #eccccf;
-  --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dfc2c4;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e5c7ca;
-  --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #dfc2c4;
-}
-
-.table-light {
-  --bs-table-bg: #f8f9fa;
-  --bs-table-striped-bg: #ecedee;
-  --bs-table-striped-color: #000;
-  --bs-table-active-bg: #dfe0e1;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #e5e6e7;
-  --bs-table-hover-color: #000;
-  color: #000;
-  border-color: #dfe0e1;
-}
-
-.table-dark {
-  --bs-table-bg: #212529;
-  --bs-table-striped-bg: #2c3034;
-  --bs-table-striped-color: #fff;
-  --bs-table-active-bg: #373b3e;
-  --bs-table-active-color: #fff;
-  --bs-table-hover-bg: #323539;
-  --bs-table-hover-color: #fff;
-  color: #fff;
-  border-color: #373b3e;
-}
-
-.table-responsive, .dataTable-wrapper .dataTable-container {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-@media (max-width: 575.98px) {
-  .table-responsive-sm {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-@media (max-width: 767.98px) {
-  .table-responsive-md {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .dataTable-search{
-    width:100%;
-  }
-  .btn-group{
-    width:110%;
-  }
-}
-@media (max-width: 991.98px) {
-  .table-responsive-lg {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-@media (max-width: 1199.98px) {
-  .table-responsive-xl {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-@media (max-width: 1399.98px) {
-  .table-responsive-xxl {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-}
-
-
-
-
-
-.dataTable-wrapper .dataTable-container {
-  font-size: 0.875rem;
-}
-
-.dataTable-wrapper.no-header .dataTable-container {
-  border-top: none;
-}
-
-.dataTable-wrapper.no-footer .dataTable-container {
-  border-bottom: none;
-}
-
-.dataTable-top {
-  padding: 0 0 1rem;
-}
-
-.dataTable-bottom {
-  padding: 0;
-}
-
-.dataTable-top > nav:first-child,
-.dataTable-top > div:first-child,
-.dataTable-bottom > nav:first-child,
-.dataTable-bottom > div:first-child {
-  float: left;
-}
-
-.dataTable-top > nav:last-child,
-.dataTable-top > div:last-child,
-.dataTable-bottom > nav:last-child,
-.dataTable-bottom > div:last-child {
-  float: right;
-}
-
-.dataTable-selector {
-  width: auto;
-  display: inline-block;
-  padding-left: 1.125rem;
-  padding-right: 2.125rem;
-  margin-right: 0.25rem;
-}
-
-.dataTable-info {
-  margin: 7px 0;
-}
-
-/* PAGER */
-.pagination, .dataTable-pagination ul {
-  display: flex;
-  padding-left: 0;
-  list-style: none;
-}
-
-.page-link, .dataTable-pagination a {
-  position: relative;
-  display: block;
-  color: #0d6efd;
-  text-decoration: none;
-  background-color: #fff;
-  border: 1px solid #dee2e6;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-@media (prefers-reduced-motion: reduce) {
-  .page-link, .dataTable-pagination a {
-    transition: none;
-  }
-}
-.page-link:hover, .dataTable-pagination a:hover {
-  z-index: 2;
-  color: #0a58ca;
-  background-color: #e9ecef;
-  border-color: #dee2e6;
-}
-.page-link:focus, .dataTable-pagination a:focus {
-  z-index: 3;
-  color: #0a58ca;
-  background-color: #e9ecef;
-  outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-}
-
-.page-item:not(:first-child) .page-link, .page-item:not(:first-child) .dataTable-pagination a, .dataTable-pagination .page-item:not(:first-child) a, .dataTable-pagination li:not(:first-child) .page-link, .dataTable-pagination li:not(:first-child) a {
-  margin-left: -1px;
-}
-.page-item.active .page-link, .page-item.active .dataTable-pagination a, .dataTable-pagination .page-item.active a, .dataTable-pagination li.active .page-link, .dataTable-pagination li.active a {
-  z-index: 3;
-  color: #fff;
-  background-color: #0d6efd;
-  border-color: #0d6efd;
-}
-.page-item.disabled .page-link, .page-item.disabled .dataTable-pagination a, .dataTable-pagination .page-item.disabled a, .dataTable-pagination li.disabled .page-link, .dataTable-pagination li.disabled a {
-  color: #6c757d;
-  pointer-events: none;
-  background-color: #fff;
-  border-color: #dee2e6;
-}
-
-.page-link, .dataTable-pagination a {
-  padding: 0.375rem 0.75rem;
-}
-
-.page-item:first-child .page-link, .page-item:first-child .dataTable-pagination a, .dataTable-pagination .page-item:first-child a, .dataTable-pagination li:first-child .page-link, .dataTable-pagination li:first-child a {
-  border-top-left-radius: 0.25rem;
-  border-bottom-left-radius: 0.25rem;
-}
-.page-item:last-child .page-link, .page-item:last-child .dataTable-pagination a, .dataTable-pagination .page-item:last-child a, .dataTable-pagination li:last-child .page-link, .dataTable-pagination li:last-child a {
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-}
-
-.pagination-lg .page-link, .pagination-lg .dataTable-pagination a, .dataTable-pagination .pagination-lg a {
-  padding: 0.75rem 1.5rem;
-  font-size: 1.25rem;
-}
-.pagination-lg .page-item:first-child .page-link, .pagination-lg .page-item:first-child .dataTable-pagination a, .dataTable-pagination .pagination-lg .page-item:first-child a, .pagination-lg .dataTable-pagination li:first-child .page-link, .pagination-lg .dataTable-pagination li:first-child a, .dataTable-pagination .pagination-lg li:first-child .page-link, .dataTable-pagination .pagination-lg li:first-child a {
-  border-top-left-radius: 0.3rem;
-  border-bottom-left-radius: 0.3rem;
-}
-.pagination-lg .page-item:last-child .page-link, .pagination-lg .page-item:last-child .dataTable-pagination a, .dataTable-pagination .pagination-lg .page-item:last-child a, .pagination-lg .dataTable-pagination li:last-child .page-link, .pagination-lg .dataTable-pagination li:last-child a, .dataTable-pagination .pagination-lg li:last-child .page-link, .dataTable-pagination .pagination-lg li:last-child a {
-  border-top-right-radius: 0.3rem;
-  border-bottom-right-radius: 0.3rem;
-}
-
-.pagination-sm .page-link, .pagination-sm .dataTable-pagination a, .dataTable-pagination .pagination-sm a {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-}
-.pagination-sm .page-item:first-child .page-link, .pagination-sm .page-item:first-child .dataTable-pagination a, .dataTable-pagination .pagination-sm .page-item:first-child a, .pagination-sm .dataTable-pagination li:first-child .page-link, .pagination-sm .dataTable-pagination li:first-child a, .dataTable-pagination .pagination-sm li:first-child .page-link, .dataTable-pagination .pagination-sm li:first-child a {
-  border-top-left-radius: 0.2rem;
-  border-bottom-left-radius: 0.2rem;
-}
-.pagination-sm .page-item:last-child .page-link, .pagination-sm .page-item:last-child .dataTable-pagination a, .dataTable-pagination .pagination-sm .page-item:last-child a, .pagination-sm .dataTable-pagination li:last-child .page-link, .pagination-sm .dataTable-pagination li:last-child a, .dataTable-pagination .pagination-sm li:last-child .page-link, .dataTable-pagination .pagination-sm li:last-child a {
-  border-top-right-radius: 0.2rem;
-  border-bottom-right-radius: 0.2rem;
-}
-
-
-/* TABLE */
-.dataTable-table {
-  border-collapse: collapse;
-}
-
-.dataTable-table > tbody > tr > td,
-.dataTable-table > tbody > tr > th,
-.dataTable-table > tfoot > tr > td,
-.dataTable-table > tfoot > tr > th,
-.dataTable-table > thead > tr > td,
-.dataTable-table > thead > tr > th {
-  vertical-align: top;
-  padding: 0.5rem 0.5rem;
-}
-
-.dataTable-table > thead > tr > th {
-  vertical-align: bottom;
-  text-align: left;
-  border-bottom: none;
-}
-
-.dataTable-table > tfoot > tr > th {
-  vertical-align: bottom;
-  text-align: left;
-}
-
-.dataTable-table th {
-  vertical-align: bottom;
-  text-align: left;
-}
-
-.dataTable-table th a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.dataTable-sorter {
-  display: inline-block;
-  height: 100%;
-  position: relative;
-  width: 100%;
-  padding-right: 1rem;
-}
-
-.dataTable-sorter::before,
-.dataTable-sorter::after {
-  content: "";
-  height: 0;
-  width: 0;
-  position: absolute;
-  right: 4px;
-  border-left: 4px solid transparent;
-  border-right: 4px solid transparent;
-  opacity: 0.2;
-}
-
-.dataTable-sorter::before {
-  bottom: 4px;
-}
-
-.dataTable-sorter::after {
-  top: 0px;
-}
-
-.asc .dataTable-sorter::after,
-.desc .dataTable-sorter::before {
-  opacity: 0.6;
-}
-
-.dataTables-empty {
-  text-align: center;
-}
-
-.dataTable-top::after,
-.dataTable-bottom::after {
-  clear: both;
-  content: " ";
-  display: table;
-}
 
 .btn-datatable {
   height: 20px !important;
@@ -644,35 +90,218 @@ legend + * {
 .inputfile{
   display:none;
 }
-.right{
-  width :50%;
-  min-height:100px;
-  background-color:#EEEEEE;
-  margin-left:1px;
-  
-}
-.left{
-  width :49%;
-  min-height:100px;
-  background-color:#EEEEEE;
-  float:right;
-}
-.top{
-  width :100%;
-  min-height:100px;
-  background-color:#EEEEEE;
- margin-bottom:3px;
-}
+
 .modals-body{
   width:100%;
   min-height:100px;
 }
 .modals-body label{
   font-weight:bold;
+  
 }
 .clear{
   clear: both;
 }
+
+.search-wrapper {
+    position: absolute;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    top:115%;
+    left:110%;
+}
+.search-wrapper.active {}
+
+.search-wrapper .input-holder {
+    overflow: hidden;
+    height: 70px;
+    background: rgba(255,255,255,0);
+    border-radius:6px;
+    position: relative;
+    width:70px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.search-wrapper.active .input-holder {
+    border-radius: 50px;
+    width:450px;
+    background: #ffffff;
+    -webkit-transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    -moz-transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    transition: all .5s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+   
+}
+
+.search-wrapper .input-holder .search-input {
+    width:100%;
+    height: 50px;
+    padding:0px 70px 0 20px;
+    opacity: 0;
+    position: absolute;
+    top:0px;
+    left:0px;
+    background: transparent;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border:none;
+    outline:none;
+    font-family:"Open Sans", Arial, Verdana;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+    color:#FFF;
+    -webkit-transform: translate(0, 60px);
+    -moz-transform: translate(0, 60px);
+    transform: translate(0, 60px);
+    -webkit-transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    -moz-transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+
+    -webkit-transition-delay: 0.3s;
+    -moz-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+.search-wrapper.active .input-holder .search-input {
+    opacity: 1;
+    -webkit-transform: translate(0, 10px);
+    -moz-transform: translate(0, 10px);
+    transform: translate(0, 10px);
+}
+
+.search-wrapper .input-holder .search-icon {
+    width:80px;
+    height:30px;
+    border:none;
+    border-radius:6px;
+    background: #FFF;
+    padding:0px;
+    outline:none;
+    position: relative;
+    z-index: 2;
+    float:right;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+.search-wrapper.active .input-holder .search-icon {
+    width: 50px;
+    height:50px;
+    margin: 10px;
+    border-radius: 30px;
+}
+.search-wrapper .input-holder .search-icon span {
+    width:22px;
+    height:22px;
+    display: inline-block;
+    vertical-align: middle;
+    position:relative;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+    -moz-transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+    transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+
+}
+.search-wrapper.active .input-holder .search-icon span {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.search-wrapper .input-holder .search-icon span::before, .search-wrapper .input-holder .search-icon span::after {
+    position: absolute;
+    content:'';
+}
+.search-wrapper .input-holder .search-icon span::before {
+    width: 4px;
+    height: 11px;
+    left: 9px;
+    top: 18px;
+    border-radius: 2px;
+    background: aqua;
+    color:black;
+
+}
+.search-wrapper .input-holder .search-icon span::after {
+    width: 14px;
+    height: 14px;
+    left: 0px;
+    top: 0px;
+    border-radius: 16px;
+    border: 4px solid aqua;
+    color:black;
+}
+
+.search-wrapper .close {
+    position: absolute;
+    z-index: 1;
+    top:0px;
+    right:0px;
+    width:25px;
+    height:25px;
+    cursor: pointer;
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    -webkit-transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+    -moz-transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+    transition: all .3s cubic-bezier(0.285, -0.450, 0.935, 0.110);
+    -webkit-transition-delay: 0.2s;
+    -moz-transition-delay: 0.2s;
+    transition-delay: 0.2s;
+    
+}
+.search-wrapper.active .close {
+    right:-50px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    -webkit-transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    -moz-transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    transition: all .6s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+    -webkit-transition-delay: 0.5s;
+    -moz-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+}
+.search-wrapper .close::before, .search-wrapper .close::after {
+    position:absolute;
+    content:'';
+    background: #FFF;
+    border-radius: 2px;
+}
+.search-wrapper .close::before {
+    width: 5px;
+    height: 25px;
+    left: 10px;
+    top: 0px;
+}
+.search-wrapper .close::after {
+    width: 25px;
+    height: 5px;
+    left: 0px;
+    top: 10px;
+}
+.search-wrapper .result-container {
+    width: 100%;
+    position: absolute;
+    top:80px;
+    left:0px;
+    text-align: center;
+    font-family: "Open Sans", Arial, Verdana;
+    font-size: 14px;
+    display:none;
+    color:#B7B7B7;
+}
+
+
+@media screen and (max-width: 560px) {
+    .search-wrapper.active .input-holder {width:200px;margin-left:-200px}
+}
+
   </style>
   <body>
     <!-- Loader starts-->
@@ -769,7 +398,7 @@ legend + * {
             <div class="row">
               <div class="col-xl-8 xl-100 box-col-12">
                 <div class="card sales-overview">
-                  <div class="card-body p-0">
+                  <div style="z-index: 9;" class="card-body p-0">
                     @yield('users')
                   </div>
                 </div>
@@ -778,7 +407,9 @@ legend + * {
             </div>
           </div>
           <!-- Container-fluid Ends-->
+          
         </div>
+                    
         <!-- footer start-->
         <footer class="footer">
           <div class="container-fluid">
@@ -853,10 +484,10 @@ legend + * {
               @endforeach
              
               
-              <li><a class="sidebar-header" href="#"><i data-feather="briefcase"></i><span>Coming Soon</span><i class="fa fa-angle-right pull-right"></i></a>
+              <li><a class="sidebar-header" href="#"><i data-feather="briefcase"></i><span>Tài Khoản</span><i class="fa fa-angle-right pull-right"></i></a>
                 <ul class="sidebar-submenu">
-                  <li><a href="comingsoon.html" target="_blank"><i class="fa fa-circle"></i>Coming Simple</a></li>
-                  <li><a href="comingsoon-bg-video.html" target="_blank"><i class="fa fa-circle"></i>Coming with Bg video</a></li>
+                  <li><a href="comingsoon.html" target="_blank"><i class="fa fa-circle"></i>Đổi Mật Khẩu</a></li>
+                  <li><a href="{{route('logout')}}" target="_blank"><i class="fa fa-circle"></i>Đăng Xuất</a></li>
                   <li><a href="comingsoon-bg-img.html" target="_blank"><i class="fa fa-circle"></i>Coming with Bg Image</a></li>
                 </ul>
               </li>
@@ -907,8 +538,13 @@ legend + * {
     <script src="{{asset('assets/js/chat-menu.js')}}"></script>
     <script src="{{asset('assets/js/tooltip-init.js')}}"></script>
     <script src="{{asset('assets/js/animation/wow/wow.min.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="{{asset('assets/js/datatables-simple-demo.js')}}"></script>
+    
+
+
+    <script src="{{asset('assets/js/tree/jstree.min.js')}}"></script>
+    <script src="{{asset('assets/js/tree/tree.js')}}"></script>
+    <script src="{{asset('assets/js/chat-menu.js')}}"></script>
+    <script src="{{asset('assets/js/tooltip-init.js')}}"></script>
     <!-- Plugins JS Ends-->
     <!-- Theme js-->
     <script src="{{asset('assets/js/script.js')}}"></script>
@@ -941,37 +577,142 @@ legend + * {
 
       $(".info").click(function(){
             var id_ns = $(this).val();
-            alert(id_ns)
             $.ajax({
                 url:'http://localhost:8081/oracle/public/user_id',
                 method:"GET",
                 data:{id_ns:id_ns},
                 dataType:'json',
                 success:function(res){
-                  let dev = '';
-                 // console.log(res.data[0].last_mid_name)
-                 dev = '<div class="top">'+
-                                        '<img src="https://tiemchupanh.com/wp-content/uploads/2022/06/7gwy2noztxri00pn4761651507542924.jpg" alt="" style="margin-left:40%;display:block" width="20%" height="20%">'+
-                                        '<input type="file" name="file" id="file" class="inputfile" />'+
-                                        '<button style="margin-left:40%;margin-top:10px;width:20%" type="">'+'<label style="text-aline:center" for="file">Chỉnh Sửa'+'</label>'+'</button>'
-                                      +'</div>'+
-                                      '<div class="left">'+
-                                          '<label>ID nhân sự:'+'</label>'+'<input class="form-control" type="text" name="" value="'+res.data[0].staff_code+'" disabled>'+'<br />'
-                                          +'<label>Họ Tên:'+'</label>'+'<br />'+'<input type="text" class="form-control" name="" value="'+res.data[0].first_name+'" id="">'+'<br />'
-                                          +'<label>Giới tính:'+'</label>'+'<input type="text" class="form-control" name="" value="Nam" id="">'+'<br />'+
-                                          '<label>Loại chứng chỉ:'+'</label><input type="text" class="form-control" name="" value="CMND" id="">'+'<br />'+
-                                          '<label>Ngày Sinh:'+'</label>'+'<input type="text" name="" class="form-control" value="'+res.data[0].first_name+'" id="">'+'<br />'+
-                                          '<label>sinh trắc học:'+'</label>'+'<input type="text" name="" class="form-control" value="phong" id="">'+'<br />'
-                                      +'</div>'+
-                                      '<div class="right">'+
-                                         ' <label>Phòng ban*:'+'</label>'+'<br />'+'<input class="form-control" type="text" name="" value="phong" id="">'+'<br />'+
-                                          '<label>Họ:'+'</label>'+'<br />'+'<input type="text" class="form-control" name="" value="phong" id="">'+'<br />'+
-                                          '<label>Số điện thoại:'+	'</label>'+'<input type="text" class="form-control" name="" value="phong" id="">'+'<br />'+
-                                          '<label>Số chứng chỉ:'+	'</label>'+'<input type="text" class="form-control" name="" value="phong" id="">'+'<br />'+
-                                          '<label>Email:'+'</label>'+'<br />'+'<input type="text" class="form-control" name="" value="phong" id="">'+'<br />'+
-                                         ' <label>Số Thẻ:'+'</label>'+'<br />'+'<input type="text" class="form-control" name="" value="phong" id="">'+'<br />'+
-                                      '</div>'
-                 $(".modals-body").html(dev);
+                  let left = '';
+                  let right = '';
+                 console.log(res)
+              
+                left =  
+               
+                  
+                            '<div class="left-l">'+
+                                  '<br />'+
+                                 ' <div>Mã NV:'+'</div>'+
+                                  '<div>Mã Chấm:'+'</div>'+
+                                  '<div>Họ Và Tên:'+'</div>'+
+                                  '<div>Giới Tính:'+'</div>'+
+                                  '<div>Bộ Phận:'+'</div>'+
+                                  '<div>Quê Quán:'+'</div>'+
+                                  '<div>Chức Vụ:'+'</div>'+
+                                  '<div>Thường Trú:'+'</div>'+
+                                  '<div>Địa Chỉ:'+'</div>'+
+                                  '<div>Số ĐT:'+'</div>'+
+                                  '<div>Số CMND:'+'</div>'+
+                                  '<div>Thuế Cá Nhân:'+'</div>'+
+                                  '<div>Hôn Nhân:'+'</div>'+
+                                  '<div>Dân Tộc:'+'</div>'+
+                                  '<div>Ngân Hàng:'+'</div>'+ 
+                                  
+                              '</div>'+
+                              '<div class="left-r">'+
+                                '<br />'+
+                                '<div>'+'<input type="text" name="" value="'+res.data[0].staff_code+'" id="">'+
+                                      '<span>Hiệu Lực:'+'<input  type="checkbox" name="" id="">'+'</span>'+
+                                '</div>'+
+                                '<div>'+
+                                      '<input type="text" value="'+res.data[0].staff_code+'" name="" id="">'+
+                                '</div>'+
+                                '<div>'+'<input type="text" value="'+res.data[0].full_name+'" name="" id="">'+
+                                      '<span>Đăng Ký Suất Ăn:'+'</span>'+'<input type="checkbox" name="" id="">'+
+                                  '</div>'+
+                                '<div>'+
+                                      '<select>'+
+                                          '<option value="">Nam'+'</option>'+
+                                          '<option value="">Nữ'+'</option>'+
+                                      '</select>'+
+                                      '<span style="margin-left: 20%;">Ngày Sinh:'+'</span>'+'<input type="date" name="" id="">'+
+                                    
+                                  '</div>'+
+                                  '<div>'+
+                                    '<input type="text" name="" id="">'+
+                                  '</div>'+
+                                '<div>'+
+                                  '<input value="'+res.data[0].contact_address+'" type="text" name="" id="">'+
+                                      '<span >Chi Nhánh:'+'<input style="width: 17%;" type="text" name="" id="">'+'</span>'+
+                                  '</div>'+
+                                '<div>'+'<input type="text" value="Nhân Viên"  name="" id="">'+
+                                      '<span>Nhóm:'+'</span>'+'<input style="width: 5.5%;" type="text" name="" id="">'+'<br />'+
+
+                                  '</div>'+
+                                '<div>'+'<input style="width: 87%;" value="'+res.data[0].contact_address+'" type="text" name="" id="">'+'</div>'+
+                                '<div>'+'<input style="width: 87%;" value="'+res.data[0].contact_address+'" type="text" name="" id="">'+'</div>'+
+                                '<div>'+
+                                    '<input style="width: 28%;" value="'+res.data[0].cell_phone+'" type="text" name="" id="">'+
+                                    '<span>Email:'+'</span>'+'<input type="text" name="" id="">'+
+                                '</div>'+
+                                '<div>'+
+                                    '<input value="'+res.data[0].career_level+'" style="width: 28%;" type="text" name="" id="">'+
+                                    '<span>Ngày Cấp:'+'</span>'+'<input value="'+res.data[0].attend_date+'" style="width: 40%;" type="date" name="" id="">'+
+                                '</div>'+
+                                '<div>'+
+                                    '<input style="width: 28%;" type="text" name="" id="">'+
+                                    '<span>Ngày Cấp:'+'</span>'+'<input style="width: 40%;" type="date" name="" id="">'+
+                                '</div>'
+                                '<div>'+
+                                    '<input style="width: 28%;" type="text" name="" id="">'+
+                                    '<span>Số Con:'+'</span>'+'<select name="" id="">'+
+                                      '<option value="">1'+'</option>'+
+                                   ' </select>'+
+                                    '<span>Người Phụ Thuộc:'+'</span>'+'<select name="" id="">'+
+                                      '<option value="">1'+'</option>'+
+                                    '</select>'+
+                                '</div>'+
+
+
+           
+                                '</div>'
+                        
+                       
+                            right =    '<div class="right-l">'+
+                                    '<br />'+
+                                        '<div>Ngày Vào Làm:'+'</div>'+
+                                        '<div>Sổ BHXH:'+'</div>'+
+                                        '<div>Ngày Lập BHXH:'+'</div>'+
+                                        '<div>Trình Độ Học Vấn:'+'</div>'+
+                                        '<div>Chuyên Môn:'+'</div>'+
+                                        '<div>Ngày Thôi Việc:'+'</div>'+
+                                        '<div>Lưu Động Dự Án:'+'</div>'+
+                                        '<div>Không Tính Công:'+'</div>'+
+                                        '<div>Bù Đi Trễ Về Trễ:'+'</div>'+ 
+                                '</div>'+
+                                '<div class="right-r">'+
+                                   ' <div style="display: flex;" class="flex">'+
+                                        '<div class="vip">'+
+                                            '<br />'+
+                                            '<div>'+'<input value="'+res.data[0].created_date+'" type="date" name="" id="">'+'</div>'+
+                                            '<div>'+'<input value="'+res.data[0].group_id+'" type="text" name="" id="">'+'</div>'+
+                                            '<div>'+'<input value="'+res.data[0].id_card_issued_date+'" type="text" name="" id="">'+'</div>' + 
+                                            '<div>'+'<input value="'+res.data[0].created_date+'" type="text" name="" id="">'+'</div>' +     
+                                        '</div>'+
+                                        '<div class="picture">'+
+                                           ' <img width="150px" height="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvvRRAYy4cthdn6wpIEYrVNOJkYfJaxJsGnBCL4b2_i8hBjfmK_vbdzahYUb_s1nd63E&usqp=CAU" alt="">'+
+                                            '<button style="margin-left:25%; width:100px">Chỉnh Sửa'+'</button>'+
+                                        '</div>'+
+                                    '</div>'+
+                                    '<div>'+'<input type="text" name="" id="">'+'</div>'+
+                                    '<div>'+'<input type="date" name="" id="">'+'</div>'+
+                                    '<div>'+'<input type="checkbox" name="" id="">'+
+                                        '<span>Tính Công Đủ Tháng:'+'</span>'+'<input type="checkbox" name="" id="">'+
+                                        '<span>Có Làm Tính Đủ Giờ:'+'</span>'+'<input type="checkbox" name="" id="">'+
+                                    '</div>'+  
+                                    '<div>'+'<input type="checkbox" name="" id="">'+
+                                        '<span>Công Nhật:'+'</span>'+'<input type="checkbox" name="" id="">'+
+                                        '<span>Số RFID Thẻ:'+'</span>'+'<input style="width:20%" type="text" name="" id="">'+
+                                    '</div>'+ 
+                                   ' <div>'+'<input type="checkbox" name="" id="">'+
+                                        '<span>Không Tăng Ca:'+'</span>'+'<input type="checkbox" name="" id="">'+
+                                       ' <span>Ca:'+'</span>'+'<input type="text" name="" id="">'+
+                                    '</div>'+
+                               ' </div> '
+                           
+                                       
+                 $(".lef").html(left);
+                 $(".rig").html(right);
                 }
             });
         });
@@ -981,24 +722,212 @@ legend + * {
        
      
   });
+  function searchToggle(obj, evt){
+    var container = $(obj).closest('.search-wrapper');
+
+    if(!container.hasClass('active')){
+            container.addClass('active');
+            evt.preventDefault();
+    }
+    else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+            container.removeClass('active');
+            // clear input
+            container.find('.search-input').val('');
+            // clear and hide result container when we press close
+            container.find('.result-container').fadeOut(100, function(){$(this).empty();});
+    }
+}
+
+function submitFn(obj, evt){
+    value = $(obj).find('.search-input').val().trim();
+
+    _html = "Searching for: ";
+    if(!value.length){
+        _html = "Ehem, I can't search nothing";
+    }
+    else{
+        _html += "<b>" + value + "</b>";
+    }
+
+    $(obj).find('.result-container').html('<span>' + _html + '</span>');
+    $(obj).find('.result-container').fadeIn(100);
+
+    evt.preventDefault();
+}
 
     </script>
   </body>
 </html>
-<div class="welcome-popup modal fade" id="loadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-      <div class="modal-body">
-        <div class="modal-header"></div>
-        <div class="contain p-50">
-          <div class="text-center">
-            <h3>Welcome to creative admin</h3>
-            <p>start your project with developer friendly admin </p>
-            <button class="btn btn-primary btn-lg txt-white" type="button" data-dismiss="modal" aria-label="Close">Get Started</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-lg">
+                        <div style="width: 150%;margin-left: -150px;" class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="modal-title" id="myLargeModalLabel">Thêm mới</h4>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                          </div>
+                          <div class="modal-body">
+                      <div class="main">
+                          <div class="left">
+                              <div class="left-l">
+                                  <br />
+                                  <div>Mã NV:</div>
+                                  <div>Mã Chấm:</div>
+                                  <div>Họ Và Tên:</div>
+                                  <div>Giới Tính:</div>
+                                  <div>Bộ Phận:</div>
+                                  <div>Quê Quán:</div>
+                                  <div>Chức Vụ:</div>
+                                  <div>Thường Trú:</div>
+                                  <div>Địa Chỉ:</div>
+                                  <div>Số ĐT:</div>
+                                  <div>Số CMND:</div>
+                                  <div>Thuế Cá Nhân:</div>
+                                  <div>Hôn Nhân:</div>
+                                  <div>Dân Tộc:</div>
+                                  <div>Ngân Hàng:</div> 
+                                  
+                              </div>
+                              <div class="left-r">
+                                <br />
+                                <div><input type="text" name="" id="">
+                                      <span>Hiệu Lực:<input  type="checkbox" name="" id=""></span>
+                                    
+                                </div>
+                                <div>
+                                      <input type="text" name="" id="">
+                                </div>
+                                <div><input type="text" name="" id="">
+                                      <span>Đăng Ký Suất Ăn:</span><input type="checkbox" name="" id="">
+                                  </div>
+                                <div>
+                                      <select>
+                                          <option value="">Nam</option>
+                                          <option value="">Nữ</option>
+                                      </select>
+                                      <span style="margin-left: 20%;">Ngày Sinh:</span><input type="date" name="" id="">
+                                    
+                                  </div>
+                                  <div>
+                                    <input type="text" name="" id=""></span>
+                                  </div>
+                                <div>
+                                  <input type="text" name="" id="">
+                                      <span >Chi Nhánh:<input style="width: 17%;" type="text" name="" id=""></span>
+                                  </div>
+                                <div><input type="text" name="" id="">
+                                      <span>Nhóm:</span><input style="width: 5.5%;" type="text" name="" id=""><br />
+
+                                  </div>
+                                <div><input style="width: 87%;" type="text" name="" id=""></div>
+                                <div><input style="width: 87%;" type="text" name="" id=""></div>
+                                <div>
+                                    <input style="width: 28%;" type="text" name="" id="">
+                                    <span>Email:</span><input type="text" name="" id="">
+                                </div>
+                                <div>
+                                    <input style="width: 28%;" type="text" name="" id="">
+                                    <span>Ngày Cấp:</span><input style="width: 40%;" type="date" name="" id="">
+                                </div>
+                                <div>
+                                    <input style="width: 28%;" type="text" name="" id="">
+                                    <span>Ngày Cấp:</span><input style="width: 40%;" type="date" name="" id="">
+                                </div>
+                                <div>
+                                    <input style="width: 28%;" type="text" name="" id="">
+                                    <span>Số Con:</span><select name="" id="">
+                                      <option value="">1</option>
+                                    </select>
+                                    <span>Người Phụ Thuộc:</span><select name="" id="">
+                                      <option value="">1</option>
+                                    </select>
+                                </div>
+
+
+           
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="right-l">
+                                    <br />
+                                    
+                                        <div>Ngày Vào Làm:</div>
+                                        <div>Sổ BHXH:</div>
+                                        <div>Ngày Lập BHXH:</div>
+                                        <div>Trình Độ Học Vấn:</div>
+                                        <div>Chuyên Môn:</div>
+                                    <div>Ngày Thôi Việc:</div>
+                                    <div>Lưu Động Dự Án:</div>
+                                    <div>Không Tính Công:</div>
+                                    <div>Bù Đi Trễ Về Trễ:</div>
+                                    
+                                    
+                                </div>
+                                <div class="right-r">
+                                    <div style="display: flex;" class="flex">
+                                        <div class="vip">
+                                            <br />
+                                            <div><input type="date" name="" id=""></div>
+                                            <div><input type="text" name="" id=""></div>
+                                            <div><input type="text" name="" id=""></div>  
+                                            <div><input type="text" name="" id=""></div>      
+                                        </div>
+                                        <div class="picture">
+                                            <img width="150px" height="150px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvvRRAYy4cthdn6wpIEYrVNOJkYfJaxJsGnBCL4b2_i8hBjfmK_vbdzahYUb_s1nd63E&usqp=CAU" alt="">
+                                            <button style="margin-left:25%; width:100px">Chỉnh Sửa</button>
+                                        </div>
+                                    </div>
+                                    <div><input type="text" name="" id=""></div>
+                                    <div><input type="date" name="" id=""></div>
+                                    <div><input type="checkbox" name="" id="">
+                                        <span>Tính Công Đủ Tháng:</span><input type="checkbox" name="" id="">
+                                        <span>Có Làm Tính Đủ Giờ:</span><input type="checkbox" name="" id="">
+                                    </div>  
+                                    <div><input type="checkbox" name="" id="">
+                                        <span>Công Nhật:</span><input type="checkbox" name="" id="">
+                                        <span>Số RFID Thẻ:</span><input style="width:20%" type="text" name="" id="">
+                                    </div> 
+                                    <div><input type="checkbox" name="" id="">
+                                        <span>Không Tăng Ca:</span><input type="checkbox" name="" id="">
+                                        <span>Ca:</span><input type="text" name="" id="">
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                      </div>
+                      <div style="margin:auto" class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Đóng</button>
+                            <button class="btn btn-primary" type="button">Xác Nhận</button>
+                          </div>
+                    </div>
+                  </div>
 </div>
+<!-- poup update nv -->
+                    <div class="modal fade" id="exampleModalfat" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div style="width: 200%;margin-left: -150px;" class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel2">Thông Tin Nhân Sự</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                          </div>
+                          <div id="contain" class="modal-body">
+                              <div class="main">
+                                  <div class="left lef">
+
+                                  </div>
+                                  <div class="right rig">
+
+                                  </div>
+                              </div>
+                          
+                          </div>
+                          <div class="modal-footer">
+                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Đóng</button>
+                            <button class="btn btn-primary" type="button">OK</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                 
